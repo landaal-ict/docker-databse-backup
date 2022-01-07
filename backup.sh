@@ -9,7 +9,7 @@
 #-------------------------------------------------------------------
 # Vul hier onder het aantal dagen dat je de backups wilt bewaren.
 # Geef ook je backup dir aan, als de locatie niet bestaad maakt dit script hem aan.
-DAGEN=2
+DAYS=2
 BACKUPDIR=/pool/database_backups
 
 
@@ -29,10 +29,10 @@ for i in $CONTAINER; do
 
     docker exec -e MYSQL_DATABASE=$MYSQL_DATABASE -e MYSQL_PWD=$MYSQL_PWD \
         $i /usr/bin/mysqldump -u root $MYSQL_DATABASE \
-        | gzip > $BACKUPDIR/$i-$MYSQL_DATABASE-$(date +"%d%m%Y%H%M").sql.gz
+        | gzip > $BACKUPDIR/$i-$MYSQL_DATABASE-$(date +"%Y%m%d%H%M").sql.gz
 
     OLD_BACKUPS=$(ls -1 $BACKUPDIR/$i*.gz |wc -l)
-    if [ $OLD_BACKUPS -gt $DAGEN ]; then
+    if [ $OLD_BACKUPS -gt $DAYS ]; then
         find $BACKUPDIR -name "$i*.gz" -daystart -mtime +$DAYS -delete
     fi
 done
