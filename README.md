@@ -19,10 +19,10 @@ Simpel backup script voor backups van je database containers
 ## Eigen risico
 
 Ik gebruik mijn scripts voor eigen doelen.
-Dat ze bij mij werken wil niet zeggen dat het bij jou ook werkt.
+Uiteraard mag je ze gebruiken en aanpassen.
 
 Gebruik nooit zo maar gedownloade scripts, kijk eerst in de code wat ze doen! 
 
 # Verbeter ideeen?
 
-Fork het en maar veranderingen en daarna een pull request ;)
+Fork het en maak veranderingen en daarna een pull request ;)
