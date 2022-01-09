@@ -14,7 +14,7 @@
         name: docker_database_backup
         minute: '0'
         hour: '*/3'
-        job: 'ansible-playbook {{folder}}/backup.yml'
+        job: 'ansible-playbook {{folder}}/backup.yml >/dev/null 2>&1'
         state: present
 
     - name: Make a cron to delete local database backups older than 2 days
@@ -22,7 +22,7 @@
         name: Remove local database backups older than 2 days
         minute: '0'
         hour: '0'
-        job: 'find {{backup}} -mtime -1 -delete'
+        job: 'find {{backup}} -mtime -1 -delete >/dev/null 2>&1'
 
     - name: send completion alert Discord
       include_tasks: playbooks/send_comp_alert.yml
