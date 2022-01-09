@@ -14,6 +14,7 @@ Simpel backup script voor backups van je database containers
 - Clone de repo
 - Verander het aantal dagen en de backup locatie in files/backup.sh 
 - Verander de var.yml file met je eigen locaties, var.yml gaat standaard uit dat je deze repo in je home folder hebt staan.
+- Gebruik je geen ansible? dan kun je ook alleen het bash script gebruiken te vinden in files
 
 ## Eigen risico
 
