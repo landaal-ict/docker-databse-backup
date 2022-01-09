@@ -1,0 +1,10 @@
+# Discord vars
+
+# Format from Discord webhook URL: /webhooks/{webhook.id}/{webhook.token}
+
+ id: je_web_hook_id
+ token: je_web_hook_token
+
+# Folder location of Docker-database-backup
+
+   folder: /$HOME/docker-databse-backup

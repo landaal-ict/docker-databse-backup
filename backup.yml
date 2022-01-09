@@ -1,0 +1,31 @@
+---
+
+- hosts: localhost
+  connection: local
+  vars_files:
+    - vars.yml
+    
+  tasks:
+    - name: Backup Mysql / Mariadb databases from docker
+      command: sh files/backup.sh
+
+    - name: Make a cron to run every 3 hours
+      cron:
+        name: docker_database_backup
+        minute: '0'
+        hour: '*/3'
+        job: 'ansible-playbook {{folder}}/backup.yml'
+        state: present
+
+    - name: send completion alert Discord
+      include_tasks: playbooks/send_comp_alert.yml
+      tags: always
+      when:
+       - task_failed is not defined
+
+    - name: send failure alert Discord
+      include_tasks: playbooks/send_failure_alert.yml
+      tags: always
+      when:
+       - task_failed is defined
+       - task_failed == true

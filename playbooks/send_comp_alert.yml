@@ -1,0 +1,7 @@
+- name: send completion notification to Discord
+  tags: always
+  community.general.discord:
+    webhook_id: "{{id}}"
+    webhook_token: "{{token}}"
+    content: "✔️  Docker Database Backup Finished On *{{ansible_hostname}}*"
+  changed_when: False

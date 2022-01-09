@@ -1,0 +1,6 @@
+- name: send message to Discord
+  community.general.discord:
+    webhook_id: "{{id}}"
+    webhook_token: "{{token}}"
+    content: "⚠️  Docker Database Backup failed on *{{ansible_hostname}}*"
+

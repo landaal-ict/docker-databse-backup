@@ -9,6 +9,7 @@
 #-------------------------------------------------------------------
 # Vul hier onder het aantal dagen dat je de backups wilt bewaren.
 # Geef ook je backup dir aan, als de locatie niet bestaad maakt dit script hem aan.
+
 DAYS=2
 BACKUPDIR=/pool/database_backups
 
