@@ -17,6 +17,13 @@
         job: 'ansible-playbook {{folder}}/backup.yml'
         state: present
 
+    - name: Make a cron to delete local database backups older than 2 days
+      cron:
+        name: Remove local database backups older than 2 days
+        minute: '0'
+        hour: '0'
+        job: 'find {{backup}} -mtime -1 -delete'
+
     - name: send completion alert Discord
       include_tasks: playbooks/send_comp_alert.yml
       tags: always
