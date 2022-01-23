@@ -2,8 +2,8 @@
 
 # Format from Discord webhook URL: /webhooks/{webhook.id}/{webhook.token}
 
- id: wekhook_id 
- token: webhook_token
+ id: 924700304220520549
+ token: zqG_MZG4Zba2AWdTKVdtbinTDg9e7sblGV5D5nEvpiqAjicWZ-uhJFQlAh5Z5P28FH1I
 
 # Folder location of Docker-database-backup
 
@@ -11,4 +11,4 @@
 
 # Backup location
 #
- backup: /your/backup/location
+ backup: /pool/database_backups

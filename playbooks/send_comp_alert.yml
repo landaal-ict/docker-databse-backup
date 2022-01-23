@@ -1,7 +1,9 @@
-- name: send completion notification to Discord
-  tags: always
-  community.general.discord:
-    webhook_id: "{{id}}"
-    webhook_token: "{{token}}"
-    content: "✔️  Docker Database Backup Finished On *{{ansible_hostname}}*"
-  changed_when: False
+- name: Send notify to Telegram
+  community.general.telegram:
+    token: "{{ telegram_token }}"
+    api_args:
+      chat_id: "{{ telegram_chat_id }}"
+      parse_mode: "markdown"
+      text: "✔️  Docker Database Backup Finished On *{{ansible_hostname}}*"
+      disable_web_page_preview: false
+      disable_notification: false
