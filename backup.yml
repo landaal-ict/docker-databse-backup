@@ -24,13 +24,13 @@
         hour: '0'
         job: 'find {{backup}} -mtime +2 -delete >/dev/null 2>&1'
 
-    - name: send completion alert Discord
+    - name: send completion alert Telegram
       include_tasks: playbooks/send_comp_alert.yml
       tags: always
       when:
        - task_failed is not defined
 
-    - name: send failure alert Discord
+    - name: send failure alert Telegram
       include_tasks: playbooks/send_failure_alert.yml
       tags: always
       when:
