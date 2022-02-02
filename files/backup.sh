@@ -40,9 +40,9 @@ done
 
 
 # bitwardenrs backup
-# ALLEEN voor bitwardenrs NIET voor bitwarden zelf!
+# ALLEEN voor vaultwarden NIET voor bitwarden zelf!
 
-BITWARDEN_CONTAINERS=$(docker ps --format '{{.Names}}:{{.Image}}' | grep 'bitwardenrs' | cut -d":" -f1)
+BITWARDEN_CONTAINERS=$(docker ps --format '{{.Names}}:{{.Image}}' | grep 'vaultwarden' | cut -d":" -f1)
 
 for i in $BITWARDEN_CONTAINERS; do
     docker exec  $i /usr/bin/sqlite3 data/db.sqlite3 .dump \

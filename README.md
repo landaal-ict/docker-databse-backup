@@ -7,7 +7,7 @@ Simpel backup script voor backups van je database containers
 
 - [x] Mysql
 - [x] Mariadb
-- [x] Bitwardenrs database (NIET BITWARDEN ZELF)
+- [x] Vaultwarden database (NIET BITWARDEN ZELF)
 
 ## Hoe te gebruiken.
 
