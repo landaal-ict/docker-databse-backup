@@ -16,7 +16,7 @@ BACKUPDIR=/pool/database_backups
 
 # backup alle mysql,mariadb containers
 
-CONTAINER=$(docker ps --format '{{.Names}}:{{.Image}}' | grep 'mysql\|mariadb' | cut -d":" -f1)
+CONTAINER=$(docker ps --format '{{.Names}}:{{.Image}}' | grep 'mysql\|mariadb\|piwigo' | cut -d":" -f1)
 
 echo $CONTAINER
 
